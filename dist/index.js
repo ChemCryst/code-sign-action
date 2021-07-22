@@ -150,7 +150,7 @@ async function addCertificateToStore() {
             console.log("Password is required to add pfx certificate to store");
             return false;
         }
-        var command = `certutil -f -p ${password} -importpfx ${certificateFileName}`;
+        var command = `certutil -f -p "${password}" -importpfx ${certificateFileName}`;
         console.log("Adding cert to store command: " + command);
         const { stdout } = await asyncExec(command);
         console.log(stdout);
